@@ -24,15 +24,17 @@ sigma = zeros(1, size(X, 2));
 %               each feature. 
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
-%       
+%   
+numOfAttributes = size(X, 2);
 
+for i = 1:numOfAttributes
+  attribute = X(:, i:i); % column vector for a specific atrribute
+  sigma(i) = std(attribute);
+  mu(i) = mean(attribute);
+  
+  X_norm(:, i:i) = (attribute .- mu(i)) / sigma(i);
 
-
-
-
-
-
-
+end
 
 % ============================================================
 
