@@ -18,14 +18,10 @@ for iter = 1:num_iters
     %
 
 
-
-
-
-
-
-
-
-
+  hypothesis = X * theta;
+  errors = hypothesis .- y;
+  sums = (alpha / m) * (errors' * X);
+  theta = theta - sums';
 
     % ============================================================
 
