@@ -12,7 +12,12 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
+pos = find(y == 1); % indices of 1's
+neg = find(y == 0); % indices of 0's
 
+plot(X(pos, 1), X(pos, 2), 'k+', 'LineWidth', 2, 'MarkerSize', 7); 
+
+plot(X(neg, 1), X(neg, 2), 'ko', 'MarkerFaceColor', 'y', 'MarkerSize', 7);
 
 
 
