@@ -18,13 +18,15 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 %
 % Note: grad should have the same dimensions as theta
-%
+m = size(X, 1);
+h = sigmoid(X*theta);
+sumsVector = (-y .* log(h)) - ((1 - y) .* log(1 - h));
 
+J = 1/m * sum(sumsVector);
 
-
-
-
-
+for i = 1:m 
+  (h(i) - y(i))
+end
 
 
 % =============================================================
