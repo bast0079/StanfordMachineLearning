@@ -24,10 +24,9 @@ sumsVector = (-y .* log(h)) - ((1 - y) .* log(1 - h));
 
 J = 1/m * sum(sumsVector);
 
-for i = 1:m 
-  (h(i) - y(i))
+for i=1:size(theta)
+  grad(i) = (1 / m) * (h .- y)'* X(:, i);
 end
-
 
 % =============================================================
 
